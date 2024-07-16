@@ -11,7 +11,7 @@ First off you need an Pretendo Account, you can create one [here](https://preten
 - merge the mlc01 folder with your existing one
 
 Note that you will still need the rest of the Online Files from a Console Fake Files won't work.<br>
-<strong>Please only use those Accounts with Cemu since you can easily create them on a real Wii U and you don't want to risk bricking your system
+<b>Please only use those Accounts with Cemu since you can easily create them on a real Wii U and you don't want to risk bricking your system
 
 ### Building
 
