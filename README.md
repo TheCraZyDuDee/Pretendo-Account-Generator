@@ -2,6 +2,8 @@
 
 Small Tool that can create a valid account.dat file to use with Cemu
 
+![](https://i.imgur.com/4V5gfLr.png)
+
 ### Usage
 
 First off you need an Pretendo Account, you can create one [here](https://pretendo.network/account/register)
