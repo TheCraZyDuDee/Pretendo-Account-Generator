@@ -4,6 +4,8 @@ Small Tool that can create a valid account.dat file to use with Cemu
 
 ### Usage
 
+First off you need an Pretendo Account, you can create one [here](https://pretendo.network/account/register)
+
 - Download the latest release from [here](https://github.com/TheCraZyDuDee/Pretendo-Account-Generator/releases/latest/download/Pretendo.Account.Generator.exe)
 - Run the Tool and Enter all the Information nessesary and press the "Generate Account" Button
 - merge the mlc01 folder with your existing one
