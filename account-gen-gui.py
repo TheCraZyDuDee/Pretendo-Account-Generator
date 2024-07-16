@@ -7,7 +7,7 @@ from struct import pack, unpack
 import requests
 import hashlib
 import tkinter as tk
-from tkinter import ttk, messagebox, Canvas
+from tkinter import ttk, messagebox
 from CTkScrollableDropdown import *
 from CTkMessagebox import *
 import customtkinter as ctk
