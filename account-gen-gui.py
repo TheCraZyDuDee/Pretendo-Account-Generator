@@ -7,7 +7,10 @@ from struct import pack, unpack
 import requests
 import hashlib
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, Canvas
+from CTkScrollableDropdown import *
+from CTkMessagebox import *
+import customtkinter as ctk
 import base64
 import logging
 
@@ -216,9 +219,9 @@ countries = {
     "Poland": "61", "Portugal": "62", "Romania": "63", "Russia": "64", "Serbia": "65", "Slovakia": "66",
     "Slovenia": "67", "South Africa": "68", "Spain": "69", "Swaziland": "6a", "Sweden": "6b",
     "Switzerland": "6c", "Turkey": "6d", "United Kingdom": "6e", "Zambia": "6f", "Zimbabwe": "70",
-    "Azerbaijan": "71", "Mauritania (Islamic Republic of Mauritania)": "72", "Mali (Republic of Mali)": "73",
-    "Niger (Republic of Niger)": "74", "Chad (Republic of Chad)": "75", "Sudan (Republic of the Sudan)": "76",
-    "Eritrea (State of Eritrea)": "77", "Djibouti (Republic of Djibouti)": "78", "Somalia (Somali Republic)": "79",
+    "Azerbaijan": "71", "Mauritania": "72", "Mali": "73",
+    "Niger": "74", "Chad": "75", "Sudan": "76",
+    "Eritrea": "77", "Djibouti": "78", "Somalia": "79",
     "Taiwan": "80", "South Korea": "88", "Hong Kong": "90", "Macao": "91", "Indonesia": "98", "Singapore": "99",
     "Thailand": "9a", "Philippines": "9b", "Malaysia": "9c", "China": "a0", "U.A.E.": "a8", "India": "a9",
     "Egypt": "aa", "Oman": "ab", "Qatar": "ac", "Kuwait": "ad", "Saudi Arabia": "ae", "Syria": "af",
@@ -233,8 +236,8 @@ def generate_account():
     birth_year = birth_year_entry.get()
     birth_month = birth_month_entry.get()
     birth_day = birth_day_entry.get()
-    gender_text = gender_var.get()
-    country_name = country_var.get()
+    gender_text = gender_combobox.get()
+    country_name = country_combobox.get()
 
     # Map the selected text to the corresponding gender value
     gender_mapping = {"None": 0, "Male": 1, "Female": 2}
@@ -264,7 +267,7 @@ def generate_account():
             account.set_password_hash(password_hash)
             account.set_password_cache_enabled(True)
         else:
-            messagebox.showerror("Error", "Failed to fetch a valid PID from the API.")
+            msg = CTkMessagebox(title="Error", message="Failed to fetch a valid PID from the API.", option_1="ok", sound=True, icon="warning", justify="right", corner_radius=10, button_width=5)
             return
 
         # Create mlc01 path
@@ -274,77 +277,87 @@ def generate_account():
 
         # Save account data to account.dat
         account.save_to_file(mlcpath + "/account.dat")
-        messagebox.showinfo("Success", "Account data saved to:\n" + mlcpath + "/account.dat\n\nMerge the mlc01 folder with your existing one.")
+        msg = CTkMessagebox(title="Success", message="Account data saved to:\n" + mlcpath + "/account.dat\n\nMerge the mlc01 folder with your existing one.", option_1="ok", sound=True, icon="check", justify="right", corner_radius=10, button_width=5)
     except ValueError as e:
-        messagebox.showerror("Error", str(e))
+        msg = CTkMessagebox(title="Error", message=str(e), option_1="ok", sound=True, icon="warning", justify="right", corner_radius=10, button_width=5)
 
 # icon filepath
 script_dir = os.path.dirname(__file__)
 icon_path = os.path.join(script_dir, 'pretendo.ico')
 
 # Create the main application window
-root = tk.Tk()
+root = ctk.CTk()
 root.iconbitmap(icon_path)
 root.title("Pretendo Account Generator")
-root.geometry("650x350")
+root.wm_attributes('-transparentcolor', 'orange')
+root.geometry("660x300")
 root.resizable(False, False)
 
+# Setting customtkinter Theme to dark and default color to blue
+ctk.set_appearance_mode("system")
+ctk.set_default_color_theme("blue")
+
 # Create and place labels and entry widgets for the inputs
-tk.Label(root, text="PretendoNetworkID (PNID):").place(x=20, y=20)
-pnid_entry = tk.Entry(root)
+ctk.CTkLabel(root, text="PretendoNetworkID (PNID):").place(x=20, y=20)
+pnid_entry = ctk.CTkEntry(root, width=200)
 pnid_entry.place(x=200, y=20)
 
-tk.Label(root, text="Email Address:").place(x=20, y=60)
-email_entry = tk.Entry(root)
+ctk.CTkLabel(root, text="Email Address:").place(x=20, y=60)
+email_entry = ctk.CTkEntry(root, width=200)
 email_entry.place(x=200, y=60)
 
-tk.Label(root, text="Password:").place(x=20, y=100)
-password_entry = tk.Entry(root, show='*')
+ctk.CTkLabel(root, text="Password:").place(x=20, y=100)
+password_entry = ctk.CTkEntry(root, show='*', width=200)
 password_entry.place(x=200, y=100)
 
-tk.Label(root, text="Birth Year:").place(x=350, y=20)
-birth_year_entry = tk.Entry(root)
-birth_year_entry.place(x=430, y=20)
+ctk.CTkLabel(root, text="Birth Year:").place(x=430, y=20)
+birth_year_entry = ctk.CTkEntry(root)
+birth_year_entry.place(x=500, y=20)
 birth_year_entry.insert(0, '1998')
 
-tk.Label(root, text="Birth Month:").place(x=350, y=60)
-birth_month_entry = tk.Entry(root)
-birth_month_entry.place(x=430, y=60)
+ctk.CTkLabel(root, text="Birth Month:").place(x=430, y=60)
+birth_month_entry = ctk.CTkEntry(root)
+birth_month_entry.place(x=500, y=60)
 birth_month_entry.insert(0, '01')
 
-tk.Label(root, text="Birth Day:").place(x=350, y=100)
-birth_day_entry = tk.Entry(root)
-birth_day_entry.place(x=430, y=100)
+ctk.CTkLabel(root, text="Birth Day:").place(x=430, y=100)
+birth_day_entry = ctk.CTkEntry(root)
+birth_day_entry.place(x=500, y=100)
 birth_day_entry.insert(0, '01')
 
-tk.Label(root, text="Gender:").place(x=350, y=140)
-gender_var = tk.StringVar()
-gender_var.set("None")
-gender_combobox = ttk.Combobox(root, textvariable=gender_var, values=["None", "Male", "Female"], state='readonly')
-gender_combobox.place(x=430, y=140, width=125)
+ctk.CTkLabel(root, text="Gender:").place(x=430, y=140)
+gender_combobox = ctk.CTkComboBox(root, state='readonly')
+gender_combobox.place(x=500, y=140)
+CTkScrollableDropdown(gender_combobox, values=["None", "Male", "Female"], justify="left", button_color="transparent")
+gender_combobox.set("None")
 
-tk.Label(root, text="Country:").place(x=20, y=140)
-country_var = tk.StringVar()
-country_combobox = ttk.Combobox(root, textvariable=country_var, values=list(countries.keys()), state='readonly')
-country_combobox.place(x=200, y=140, width=125)
+ctk.CTkLabel(root, text="Country:").place(x=20, y=140)
+country_combobox = ctk.CTkComboBox(root, state='readonly', width=200)
+country_combobox.place(x=200, y=140)
+CTkScrollableDropdown(country_combobox, values=countries, justify="left", button_color="transparent", height=177, width=200)
 country_combobox.set("United States")
 
-verlabel = tk.Label(root, text="v0.0.1")
-verlabel.place(x=590, y=300)
+# version label
+ctk.CTkLabel(root, text="v0.0.2").place(x=610, y=265)
 
-def open_github(event):
-    webbrowser.open('https://github.com/TheCraZyDuDee/Pretendo-Account-Generator')
+# Messagebox for about page
+def about_page():
+    msg = CTkMessagebox(root, title="About", message="Pretendo Account Generator\nMade by TheCraZyDuDee", option_1="Issues", option_2="ok", sound=True, icon=None, justify="right", corner_radius=10, button_width=5)
+    response = msg.get()
 
-github_link = tk.Label(root, text="Github", fg="blue", cursor="hand2")
-github_link.place(x=20, y=300)
-github_link.bind("<Button-1>", open_github)
+    if response=="Issues":
+        webbrowser.open ('https://github.com/TheCraZyDuDee/Pretendo-Account-Generator/issues')
 
-miieditor_button = tk.Button(root, text="Mii Editor", command=lambda: webbrowser.open ('https://pretendo.network/account/miieditor'))
-miieditor_button.place(x=430, y=180)
+# Open About Page
+about_button = ctk.CTkButton(root, text="About", command=about_page, width=10)
+about_button.place(x=20, y=250)
 
-# Create and place the Generate button
-generate_button = tk.Button(root, text="Generate Account", command=generate_account)
-generate_button.place(x=20, y=180)
+# Open Mii Editor Website
+miieditor_button = ctk.CTkButton(root, text="Mii Editor", command=lambda: webbrowser.open ('https://pretendo.network/account/login?redirect=/account/miieditor'), width=50)
+miieditor_button.place(x=20, y=180)
 
-# Run the main event loop
+# Generate Button
+generate_button = ctk.CTkButton(root, text="Generate Account", command=generate_account)
+generate_button.place(x=500, y=180)
+
 root.mainloop()
