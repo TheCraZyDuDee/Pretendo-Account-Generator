@@ -289,12 +289,11 @@ icon_path = os.path.join(script_dir, 'pretendo.ico')
 root = ctk.CTk()
 root.iconbitmap(icon_path)
 root.title("Pretendo Account Generator")
-root.wm_attributes('-transparentcolor', 'orange')
 root.geometry("660x300")
 root.resizable(False, False)
 
 # Setting customtkinter Theme to dark and default color to blue
-ctk.set_appearance_mode("system")
+ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
 # Create and place labels and entry widgets for the inputs
