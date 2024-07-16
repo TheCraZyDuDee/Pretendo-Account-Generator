@@ -1,0 +1,1 @@
+pyinstaller account-gen-gui.spec
