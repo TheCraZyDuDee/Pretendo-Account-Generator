@@ -311,22 +311,22 @@ password_entry.place(x=200, y=100)
 
 ctk.CTkLabel(root, text="Birth Year:").place(x=430, y=20)
 birth_year_entry = ctk.CTkEntry(root)
-birth_year_entry.place(x=500, y=20)
+birth_year_entry.place(x=508, y=20)
 birth_year_entry.insert(0, '1998')
 
 ctk.CTkLabel(root, text="Birth Month:").place(x=430, y=60)
 birth_month_entry = ctk.CTkEntry(root)
-birth_month_entry.place(x=500, y=60)
+birth_month_entry.place(x=508, y=60)
 birth_month_entry.insert(0, '01')
 
 ctk.CTkLabel(root, text="Birth Day:").place(x=430, y=100)
 birth_day_entry = ctk.CTkEntry(root)
-birth_day_entry.place(x=500, y=100)
+birth_day_entry.place(x=508, y=100)
 birth_day_entry.insert(0, '01')
 
 ctk.CTkLabel(root, text="Gender:").place(x=430, y=140)
 gender_combobox = ctk.CTkComboBox(root, state='readonly')
-gender_combobox.place(x=500, y=140)
+gender_combobox.place(x=508, y=140)
 CTkScrollableDropdown(gender_combobox, values=["None", "Male", "Female"], justify="left", button_color="transparent")
 gender_combobox.set("None")
 
@@ -353,10 +353,10 @@ about_button.place(x=20, y=250)
 
 # Open Mii Editor Website
 miieditor_button = ctk.CTkButton(root, text="Mii Editor", command=lambda: webbrowser.open ('https://pretendo.network/account/login?redirect=/account/miieditor'), width=50)
-miieditor_button.place(x=20, y=180)
+miieditor_button.place(x=200, y=180)
 
 # Generate Button
 generate_button = ctk.CTkButton(root, text="Generate Account", command=generate_account)
-generate_button.place(x=500, y=180)
+generate_button.place(x=508, y=180)
 
 root.mainloop()
