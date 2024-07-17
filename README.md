@@ -22,7 +22,7 @@ Currently Windows only!
 - Download the Repository via git or just as zip
 - Install [Python](https://www.python.org/downloads/) and add it to System Path'
 - Install PyInstaller using `pip install pyinstaller`
-- cd to the directory containing the .ico, .py and .spec file and run `pyinstaller account-gen-gui.spec` or just run the build.bat
+- cd to the directory containing the .ico, .py and .spec file and run `pip install -r requirements.txt` and then `pyinstaller account-gen-gui.spec` or just run the build.bat
 
 
 ### Special Thanks to:
