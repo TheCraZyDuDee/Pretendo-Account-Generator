@@ -32,7 +32,7 @@ Q: Why does this require my password and will my personal information be saved s
 A: The Password is only required to create a PasswordHash for the account.dat. This Tool does not save any input from the user the only thing that leaves your system is your PNID which we need for the PNIDLT API to fetch other required data from your Pretendo account.
 
 Q: Can i use this to evade a ban?<br>
-A: No you can't! Your Console gets banned aka. your otp.bin which will not be usable for Pretendo anymore.
+A: I'm not entirely sure how bans work but i'm pretty sure that the entire Console gets banned and not just the Account so no. Obviously this Tool is not intended to unban yourself and i distance myself from that!
 
 Q: Will you provide the other files needed for going online?<br>
 A: Absolutely not! Sharing your Online files is a pretty dumb thing to do anyway since they are unique to your console, if you wanna play on Pretendo you have to buy a Wii U.
