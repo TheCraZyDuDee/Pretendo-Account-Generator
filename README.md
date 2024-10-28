@@ -1,5 +1,7 @@
 # Pretendo-Account-Generator
 
+## Due to the tool being AI-generated and my current focus on learning coding, I'll no longer be maintaining or providing support for this tool.
+
 Small Tool that can create a valid account.dat file to use with Cemu
 
 ![](https://i.imgur.com/ECskrmX.png)
