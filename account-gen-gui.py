@@ -334,10 +334,6 @@ def generate_account():
         month = int(birth_month)
         day = int(birth_day)
         current_year = datetime.now().year
-        if len(birth_year) != 4 or year < 1895:
-            raise ValueError("Invalid Birth Year, the minimum year is 1895.")
-        elif year > current_year - 13:
-            raise ValueError("Invalid Birth Year, you must be at least at the Age of 13 to create an Account.")
         if len(birth_month) != 2 or not (1 <= month <= 12):
             raise ValueError("Month must be between 01 and 12.")
         if not (1 <= day <= 31):
