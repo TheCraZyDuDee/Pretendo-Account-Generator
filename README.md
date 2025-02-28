@@ -44,7 +44,7 @@ A: In the early days you actually could but not anymore to preventing Cheating.
 
 ## Special Thanks to:
 
-- [Pretendo Team](https://pretendo.network) for their amazing work on the replacement Nintendo Servers
+- [Pretendo Team](https://pretendo.network) for their amazing work on the replacement Nintendo Servers and for the Region List from [here](https://github.com/PretendoNetwork/wiiu-country-region-extractor)
 - [GabIsAwesome](https://github.com/GabIsAwesome) for his [Generator](https://github.com/GabIsAwesome/accountfile-generator) to generate the PasswordHash, MiiName, MiiData and PID and for [PNIDLT](https://pnidlt.gabis.online/) to fetch the Accounts Mii name, MiiData and PID without all this i couldn't have possibly made this Tool
 - [WiiBrew](https://wiibrew.org) for their Country Code list found [here](https://wiibrew.org/wiki/Country_Codes)
 - [CustomTkinter](https://customtkinter.tomschimansky.com/)
