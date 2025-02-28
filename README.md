@@ -4,7 +4,7 @@
 
 Small Tool that can create a valid account.dat file to use with Cemu
 
-![](https://i.imgur.com/ECskrmX.png)
+![](https://i.imgur.com/Q9lz8Mg.png)
 
 ## Usage:
 
