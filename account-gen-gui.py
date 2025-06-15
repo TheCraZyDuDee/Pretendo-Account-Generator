@@ -211,7 +211,7 @@ class Account:
     
     def fetch_pid_from_pnid(self, pnid: str):
         try:
-            url = f"https://pnidlt.gabis.online/api/v1/pnid/{pnid}"
+            url = f"https://pnidlt.gab.net.eu.org/api/v1/pnid/{pnid}"
             response = requests.get(url)
             if response.status_code == 200:
                 try:
