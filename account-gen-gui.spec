@@ -5,7 +5,7 @@ a = Analysis(
     ['account-gen-gui.py'],
     pathex=[],
     binaries=[],
-    datas=[('pretendo.ico', '.'), ('CTkScrollableDropdown', '.'), ('CTkMessagebox', '.')],
+    datas=[('pretendo.ico', '.'), ('countries.json', '.'), ('CTkScrollableDropdown', '.'), ('CTkMessagebox', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

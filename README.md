@@ -1,7 +1,5 @@
 # Pretendo-Account-Generator
 
-## Due to the tool being AI-generated and my current focus on learning coding, support for this is limited for now.
-
 Small Tool that can create a valid account.dat file to use with Cemu
 
 ![](https://i.imgur.com/Q9lz8Mg.png)
@@ -23,7 +21,7 @@ Currently Windows only (had some issues with running the script on Linux)!
 - Download the Repository via git or just as zip
 - Install [Python](https://www.python.org/downloads/) and add it to System Path'
 - Install PyInstaller using `pip install pyinstaller`
-- cd to the directory containing the .ico, .py and .spec file and run `pip install -r requirements.txt` and then `pyinstaller account-gen-gui.spec` or just run the build.bat
+- cd to the directory containing the pretendo.ico, countries.json, account-gen-gui.py and account-gen-gui.spec file and run `pip install -r requirements.txt` and then `pyinstaller account-gen-gui.spec` or just run the build.bat
 
 ## FaQ:
 
