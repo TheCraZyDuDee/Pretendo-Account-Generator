@@ -2202,7 +2202,7 @@ region_dropdown = CTkScrollableDropdown(region_combobox, values=["None"], justif
 region_combobox.set("None")
 
 # version label
-ctk.CTkLabel(root, text="v0.0.4").place(x=610, y=305)
+ctk.CTkLabel(root, text="v0.0.5").place(x=610, y=305)
 
 # Messagebox for about page
 def about_page():
