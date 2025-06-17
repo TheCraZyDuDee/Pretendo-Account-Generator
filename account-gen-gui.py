@@ -3,19 +3,16 @@ import sys
 import webbrowser
 import random
 import binascii
-from array import array
-from struct import pack, unpack
 import requests
 import hashlib
-import tkinter as tk
-from tkinter import ttk, messagebox
-from CTkScrollableDropdown import *
-from CTkMessagebox import *
 import customtkinter as ctk
 import base64
 import logging
 import json
-from datetime import datetime
+from CTkMessagebox import CTkMessagebox
+from CTkScrollableDropdown import CTkScrollableDropdown
+from array import array
+from struct import pack, unpack
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -469,7 +466,7 @@ region_dropdown = CTkScrollableDropdown(region_combobox, values=["None"], justif
 region_combobox.set("None")
 
 # version label
-ctk.CTkLabel(root, text="v0.0.5").place(x=610, y=305)
+ctk.CTkLabel(root, text="v0.0.6").place(x=610, y=305)
 
 # Messagebox for about page
 def about_page():
