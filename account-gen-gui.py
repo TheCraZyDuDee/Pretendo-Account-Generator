@@ -388,9 +388,23 @@ def generate_account():
             return
 
         # Create mlc01 path
-        mlcpath = "mlc01/usr/save/system/act/80000001"
-        if not os.path.exists(mlcpath):
-            os.makedirs(mlcpath)
+        base_dir = "mlc01/usr/save/system/act"
+        start_id = 0x80000001
+
+        while True:
+            folder_name = f"{start_id:08x}"
+            folder_path = os.path.join(base_dir, folder_name)
+            account_file = os.path.join(folder_path, "account.dat")
+            if not os.path.exists(account_file):
+                break
+            start_id += 1
+
+        # Use the available PersistentId
+        mlcpath = folder_path
+        os.makedirs(mlcpath, exist_ok=True)
+
+        # Set the new PersistentId on the account object
+        account.m_persistent_id = start_id
 
         # Save account data to account.dat
         account.save_to_file(mlcpath + "/account.dat")
