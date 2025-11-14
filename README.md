@@ -1,3 +1,4 @@
+## Due to the Tool doing it's purpose it was created for with no issues on my end i will be closing all existing issues and archive this repository for the time being. As of right now it can still be used but that could change in the future due to changes on the API's or Pretendo's end.<br>
 # Pretendo-Account-Generator
 
 Small Tool that can create a valid account.dat file to use with Cemu
